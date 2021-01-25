@@ -33,7 +33,13 @@ public struct AKMIDIFile {
         if format == 1 {
             tracks = Array(tracks.dropFirst()) // drop tempo track
         }
-        return tracks.compactMap({ AKMIDIFileTrack(chunk: $0) })
+        return tracks.compactMap({
+            MIDIFileTrackChunk(
+                chunk: $0,
+                timeFormat: timeFormat!,
+                timeDivision: ticksPerBeat!
+            ).map { AKMIDIFileTrack(chunk: $0) }            
+        })
     }
 
     public var format: Int {
