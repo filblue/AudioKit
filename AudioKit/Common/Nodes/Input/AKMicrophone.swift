@@ -88,7 +88,7 @@
         let desiredFS = AVAudioSession.sharedInstance().sampleRate
         if let layout = currentFormat.channelLayout {
             audioFormat = AVAudioFormat(commonFormat: currentFormat.commonFormat,
-                                        sampleRate: desiredFS,
+                                        sampleRate: currentFormat.sampleRate,
                                         interleaved: currentFormat.isInterleaved,
                                         channelLayout: layout)
         } else {
