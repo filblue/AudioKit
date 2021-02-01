@@ -83,7 +83,7 @@
     // Here is where we actually check the device type and make the settings, if needed
     private func getFormatForDevice() -> AVAudioFormat? {
         let audioFormat: AVAudioFormat?
-        #if os(iOS) && !targetEnvironment(simulator)
+        #if os(iOS)
         let currentFormat = AKManager.engine.inputNode.inputFormat(forBus: 0)
         let desiredFS = AVAudioSession.sharedInstance().sampleRate
         if let layout = currentFormat.channelLayout {
