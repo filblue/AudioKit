@@ -15,6 +15,7 @@ DerivedData/
 project.xcworkspace/
 xcuserdata/
 xcodebuild
+archive/
 
 Playgrounds/**/*.framework
 Playgrounds/iOS/
